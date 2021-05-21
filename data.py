@@ -12,8 +12,8 @@ totals_df = totals_df.rename(columns = {"index" : "condition"})
 
 ###############################################################################
 
-country_df = daily_df[["Country_Region","Confirmed" , "Deaths" , "Recovered"]]
-country_df = country_df.groupby("Country_Region").sum().reset_index()
+countries_df = daily_df[["Country_Region","Confirmed" , "Deaths" , "Recovered"]]
+countries_df = countries_df.groupby("Country_Region").sum().sort_values(by = "Confirmed" , ascending=False).reset_index()
 
 ###############################################################################
 
